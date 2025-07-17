@@ -18,6 +18,9 @@ opik configure
 # Follow prompts for option 1 - Opik Cloud
 ```
 
-5. Check out your traces in the Opik UI!
+4. Check out your traces in the Opik UI!
+
 ![Example Trace](https://i.imgur.com/41Ts9Qll.png)
+
+Note - this code is an example and will not run on its own. Use this template to log Opik traces with this quickstart on Google Cloud Run. https://github.com/amitkmaraj/cloud-run-hackathon-2025/tree/main 
 
