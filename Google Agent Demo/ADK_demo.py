@@ -7,9 +7,6 @@ from opik.integrations.adk import OpikTracer
 AGENT_MODEL = "gemini-2.0-flash"
 AGENT_NAME = "weather_time_city_agent"
 
-#To track your ADK agent’s activity, use OpikTracer. This tracker records everything your agent does and saves it to Opik:
-
-
 def get_weather(city: str) -> dict:
     if city.lower() == "new york":
         return {
@@ -40,7 +37,7 @@ def get_current_time(city: str) -> dict:
     report = f'The current time in {city} is {now.strftime("%Y-%m-%d %H:%M:%S %Z%z")}'
     return {"status": "success", "report": report}
 
-
+#To track your ADK agent’s activity, use OpikTracer. This tracker records everything your agent does and saves it to Opik:
 opik_tracer = OpikTracer()
 
 root_agent = Agent(
@@ -57,3 +54,5 @@ root_agent = Agent(
     after_tool_callback=opik_tracer.after_tool_callback,
 )
 
+if __name__ == "__main__":
+    asyncio.run(main())
