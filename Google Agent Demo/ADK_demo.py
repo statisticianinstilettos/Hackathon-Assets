@@ -89,6 +89,5 @@ root_agent = Agent(
 
 if __name__ == "__main__":
     city = input("Enter a city: ")
-    runner = Runner(agent=root_agent)
-    response = runner.run(user_input=city)
-    print(response.text)
+    result = root_agent.run({"input": city})
+    print(result.text)
