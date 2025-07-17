@@ -18,18 +18,19 @@ References:
 - Opik Tracing: https://www.comet.com/docs/opik/tracing/log_traces
 - ADK integration: https://www.comet.com/docs/opik/tracing/integrations/adk
 """
-
-# Load environment variables from .env file
-load_dotenv()
     
 import datetime
 from zoneinfo import ZoneInfo
+from dotenv import load_dotenv
 
 from google.adk.agents import Agent
 from opik.integrations.adk import OpikTracer
 
 AGENT_MODEL = "gemini-2.0-flash"
 AGENT_NAME = "weather_time_city_agent"
+
+# Load environment variables from .env file
+load_dotenv()
 
 def get_weather(city: str) -> dict:
     if city.lower() == "new york":
