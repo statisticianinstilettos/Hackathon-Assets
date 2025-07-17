@@ -25,6 +25,7 @@ from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 
 from google.adk.agents import Agent
+from google.adk.runners import Runner
 from opik.integrations.adk import OpikTracer
 
 AGENT_MODEL = "gemini-2.0-flash"
@@ -88,5 +89,6 @@ root_agent = Agent(
 
 if __name__ == "__main__":
     city = input("Enter a city: ")
-    result = root_agent(city)
-    print(result)
+    runner = Runner(agent=root_agent)
+    response = runner.run(user_input=city)
+    print(response.text)
