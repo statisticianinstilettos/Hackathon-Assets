@@ -2,43 +2,23 @@
 Example Agentic AI App Hackathon with Google Cloud Run GPUs
 Setup Instructions:
 -------------------
-1. Install dependencies:
-    pip install openai-agents opik python-dotenv
-2. Set up all your API keys:
-   Option A) Create a .env file in the project root:
-    OPIK_API_KEY=your_opik_key_here
-   Option B) Export as environment variable:
-    export OPIK_API_KEY=your_opik_key_here
-3. Configure Opik (for tracing and online evals):
-    opik configure
-   # Follow prompts for local server address
-4. Run the script:
-    python ADK_demo.py
 References:
 - Opik Tracing: https://www.comet.com/docs/opik/tracing/log_traces
 - ADK integration: https://www.comet.com/docs/opik/tracing/integrations/adk
 """
     
-import os
 import datetime
 from zoneinfo import ZoneInfo
-from dotenv import load_dotenv
 
 from google.adk.agents import Agent
-from google.adk.runners import Runner
 from opik.integrations.adk import OpikTracer
 
+GOOGLE_API_KEY = "google-api-key"
+OPIK_API_KEY = "opik-api-key"
+OPIK_PROJECT_NAME = "google-agent-sdk-example"
 AGENT_MODEL = "gemini-2.0-flash"
 AGENT_NAME = "weather_time_city_agent"
 
-# Load environment variables from .env file
-load_dotenv()
-
-# Verify OpenAI API key is set
-if not os.getenv("GOOGLE_API_KEY"):
-    raise ValueError("GOOGLE_API_KEY environment variable is not set")
-if not os.getenv("OPIK_API_KEY"):
-    raise ValueError("OPIK_API_KEY environment variable is not set")
 
 def get_weather(city: str) -> dict:
     if city.lower() == "new york":
@@ -87,11 +67,3 @@ root_agent = Agent(
     after_tool_callback=opik_tracer.after_tool_callback,
 )
 
-if __name__ == "__main__":
-    city = input("Enter a city: ")
-
-    runner = Runner(agent=root_agent, app_name="weather_time_app", session_service=None)
-
-    result = runner.run({"input": city})
-
-    print(result.text)
