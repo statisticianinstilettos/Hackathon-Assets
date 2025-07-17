@@ -5,7 +5,9 @@ A simple demo Weather Agent showcasing the integration of [Google's Agent Develo
 In this demo you will learn how to demo features:
 
 1. **Build an AI Agents with Google's (ADK)
-2. **Use the [Opik ADK integration](https://www.comet.com/docs/opik/tracing/integrations/adk) to log Agent traces
+2. **Use the [Opik ADK integration](https://www.comet.com/docs/opik/tracing/integrations/adk) to log Agent traces.
+
+To track your ADK agent’s activity, use OpikTracer. This tracker records everything your agent does and saves it to Opik.
 
 ## Setup
 
@@ -33,3 +35,11 @@ opik configure
 ```bash
 python ADK_demo.py
 ```
+
+5. Check out your traces in the Opik UI!
+![Example Trace](https://i.imgur.com/41Ts9Qll.png)
+
+## Project Structure
+
+- `recipe_agent.py`: Main application file containing agent definitions and logic
+- `.env`: (Optional) Environment variables file for API keys
