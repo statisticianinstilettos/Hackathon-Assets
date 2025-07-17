@@ -13,7 +13,7 @@ To track your ADK agent’s activity, use OpikTracer. This tracker records every
 
 1. Install dependencies:
 ```bash
-pip install opik google-adk
+pip install opik google-adk 
 ```
 
 2. Set up your OpenAI API key:
