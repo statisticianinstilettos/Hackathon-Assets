@@ -98,5 +98,5 @@ if __name__ == "__main__":
         session_service=None  # Optional, will default to in-memory if not provided
     )
 
-    result = runner.run({"input": city})
+    result = runner.run(input=city)
     print(result.text)
