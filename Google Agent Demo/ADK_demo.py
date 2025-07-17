@@ -25,6 +25,7 @@ from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 
 from google.adk.agents import Agent
+from google.adk.runners import Runner
 from opik.integrations.adk import OpikTracer
 
 AGENT_MODEL = "gemini-2.0-flash"
@@ -86,7 +87,16 @@ root_agent = Agent(
     after_tool_callback=opik_tracer.after_tool_callback,
 )
 
+from google.adk.runners import Runner
+
 if __name__ == "__main__":
     city = input("Enter a city: ")
-    result = root_agent.run({"input": city})
+
+    runner = Runner(
+        agent=root_agent,
+        app_name="weather_time_app",
+        session_service=None  # Optional, will default to in-memory if not provided
+    )
+
+    result = runner.run({"input": city})
     print(result.text)
