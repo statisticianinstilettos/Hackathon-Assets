@@ -15,7 +15,7 @@ pip install opik
 3. Configure Opik:
 ```bash
 opik configure
-# Follow prompts for local server address
+# Follow prompts for option 1 - Opik Cloud
 ```
 
 5. Check out your traces in the Opik UI!
