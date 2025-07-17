@@ -19,6 +19,7 @@ References:
 - ADK integration: https://www.comet.com/docs/opik/tracing/integrations/adk
 """
     
+import os
 import datetime
 from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
@@ -31,6 +32,12 @@ AGENT_NAME = "weather_time_city_agent"
 
 # Load environment variables from .env file
 load_dotenv()
+
+# Verify OpenAI API key is set
+if not os.getenv("GOOGLE_API_KEY"):
+    raise ValueError("GOOGLE_API_KEY environment variable is not set")
+if not os.getenv("OPIK_API_KEY"):
+    raise ValueError("OPIK_API_KEY environment variable is not set")
 
 def get_weather(city: str) -> dict:
     if city.lower() == "new york":
