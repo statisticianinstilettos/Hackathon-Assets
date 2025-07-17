@@ -90,7 +90,7 @@ root_agent = Agent(
 if __name__ == "__main__":
     city = input("Enter a city: ")
 
-    runner = Runner(agent=root_agent, app_name="weather_time_app")
+    runner = Runner(agent=root_agent, app_name="weather_time_app", session_service=None)
 
     result = runner.run({"input": city})
 
