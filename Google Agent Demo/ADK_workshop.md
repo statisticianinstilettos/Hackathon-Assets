@@ -19,10 +19,10 @@ pip install opik google-adk
 2. Set up your OpenAI API key:
 ```bash
 # Option A: Create a .env file
-OPENAI_API_KEY=your_openai_key_here
+OPIK_API_KEY=your_opik_key_here
 
 # Option B: Export as environment variable
-export OPENAI_API_KEY=your_openai_key_here
+export OPIK_API_KEY=your_opiki_key_here
 ```
 
 3. Configure Opik:
