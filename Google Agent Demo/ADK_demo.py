@@ -80,4 +80,6 @@ root_agent = Agent(
 )
 
 if __name__ == "__main__":
-    main()
+    city = input("Enter a city: ")
+    print(get_weather(city))
+    print(get_current_time(city))
