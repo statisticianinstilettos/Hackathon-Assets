@@ -25,6 +25,7 @@ from zoneinfo import ZoneInfo
 from dotenv import load_dotenv
 
 from google.adk.agents import Agent
+from google.adk.runners import Runner
 from opik.integrations.adk import OpikTracer
 
 AGENT_MODEL = "gemini-2.0-flash"
