@@ -88,5 +88,5 @@ root_agent = Agent(
 
 if __name__ == "__main__":
     city = input("Enter a city: ")
-    result = root_agent.chat(city)
+    result = root_agent(city)
     print(result)
