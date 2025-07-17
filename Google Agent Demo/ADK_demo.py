@@ -1,3 +1,27 @@
+"""
+Example Agentic AI App Hackathon with Google Cloud Run GPUs
+Setup Instructions:
+-------------------
+1. Install dependencies:
+    pip install openai-agents opik python-dotenv
+2. Set up all your API keys:
+   Option A) Create a .env file in the project root:
+    OPIK_API_KEY=your_opik_key_here
+   Option B) Export as environment variable:
+    export OPIK_API_KEY=your_opik_key_here
+3. Configure Opik (for tracing and online evals):
+    opik configure
+   # Follow prompts for local server address
+4. Run the script:
+    python ADK_demo.py
+References:
+- Opik Tracing: https://www.comet.com/docs/opik/tracing/log_traces
+- ADK integration: https://www.comet.com/docs/opik/tracing/integrations/adk
+"""
+
+# Load environment variables from .env file
+load_dotenv()
+    
 import datetime
 from zoneinfo import ZoneInfo
 
