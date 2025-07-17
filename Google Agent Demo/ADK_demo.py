@@ -85,3 +85,12 @@ root_agent = Agent(
     before_tool_callback=opik_tracer.before_tool_callback,
     after_tool_callback=opik_tracer.after_tool_callback,
 )
+
+if __name__ == "__main__":
+    city = input("Enter a city: ")
+
+    runner = Runner(agent=root_agent, app_name="weather_time_app")
+
+    result = runner.run({"input": city})
+
+    print(result.text)
