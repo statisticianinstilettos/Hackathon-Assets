@@ -1,17 +1,13 @@
 import datetime
 from zoneinfo import ZoneInfo
 
-from google.adk.agents import LlmAgent
+from google.adk.agents import Agent
 from opik.integrations.adk import OpikTracer
 
 AGENT_MODEL = "gemini-2.0-flash"
 AGENT_NAME = "weather_time_city_agent"
 
-import datetime
-from zoneinfo import ZoneInfo
-
-from google.adk.agents import Agent
-from opik.integrations.adk import OpikTracer
+#To track your ADK agent’s activity, use OpikTracer. This tracker records everything your agent does and saves it to Opik:
 
 
 def get_weather(city: str) -> dict:
